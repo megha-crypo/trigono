@@ -1,0 +1,249 @@
+{
+  "intents": [
+    {
+      "intent": "learn",
+      "examples": [
+        {
+          "text": "trignometry formula"
+        },
+        {
+          "text": "formula"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Angle",
+      "examples": [
+        {
+          "text": "Angle Identities"
+        },
+        {
+          "text": "Angle"
+        },
+        {
+          "text": "Double Angle Identities"
+        },
+        {
+          "text": "Trigonometry Formulas involving Double Angle Identities"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Cofunction",
+      "examples": [
+        {
+          "text": "Trigonometry Formulas involving Cofunction Identities"
+        },
+        {
+          "text": "involving Cofunction Identities"
+        },
+        {
+          "text": "Trigonometry Formulas involving Cofunction Identities (in Degrees)"
+        },
+        {
+          "text": "Cofunction Identities"
+        },
+        {
+          "text": "Identities"
+        },
+        {
+          "text": "Cofunction"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Product",
+      "examples": [
+        {
+          "text": "Product identities"
+        },
+        {
+          "text": "Trigonometry Formulas involving Product identities"
+        },
+        {
+          "text": "Product"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Sum1",
+      "examples": [
+        {
+          "text": "Trigonometry Formulas involving Sum/Difference IdentitiesTrigonometry Formulas involving Sum/Difference Identities"
+        },
+        {
+          "text": "Difference"
+        },
+        {
+          "text": "Sum"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "t2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Trigonometry Formulas involving Sum/Difference Identities:\n\n•\tsin(x+y) = sin(x)cos(y)+cos(x)sin(y)\n•\tcos(x+y) = cos(x)cos(y)–sin(x)sin(y)\n•\ttan(x+y) = (tan x + tan y)/ (1−tan x •tan y)\n•\tsin(x–y) = sin(x)cos(y)–cos(x)sin(y)\n•\tcos(x–y) = cos(x)cos(y) + sin(x)sin(y)\n•\ttan(x−y) = (tan x–tan y)/ (1+tan x • tan y)\n\nEnter any other option"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "conditions": "#Sum1",
+      "dialog_node": "node_2_1590303112631",
+      "previous_sibling": "node_6_1590303062288"
+    },
+    {
+      "type": "standard",
+      "title": "t1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Trigonometry Formulas involving Cofunction Identities (in Degrees) are\n\n•\tsin(90°−x) = cos x\n•\tcos(90°−x) = sin x\n•\ttan(90°−x) = cot x\n•\tcot(90°−x) = tan x\n•\tsec(90°−x) = csc x\n•\tcsc(90°−x) = sec x\n\nEnter any other option"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "conditions": "#Cofunction",
+      "dialog_node": "node_6_1590303062288"
+    },
+    {
+      "type": "standard",
+      "title": "t3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Trigonometry Formulas involving Double Angle Identities:\n\n•\tsin(2x) = 2sin(x) • cos(x) = [2tan x/(1+tan2 x)]\n•\tcos(2x) = cos2(x)–sin2(x) = [(1-tan2 x)/(1+tan2 x)]\n•\tcos(2x) = 2cos2(x)−1 = 1–2sin2(x)\n•\ttan(2x) = [2tan(x)]/ [1−tan2(x)]\n•\tsec (2x) = sec2 x/(2-sec2 x)\n•\tcsc (2x) = (sec x. csc x)/2\n\nEnter any other option"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1590303062288",
+      "conditions": "#Angle",
+      "dialog_node": "node_7_1590303195626"
+    },
+    {
+      "type": "standard",
+      "title": "t5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Trigonometry Formulas involving Product identities:\n\n•\tsinx⋅cosy=(sin(x+y)+sin(x−y))/2\n•\tcosx⋅cosy=(cos(x+y)+cos(x−y))/2\n•\tsinx⋅siny=(cos(x+y)−cos(x−y))/2\n\nEnter any other option"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1590303112631",
+      "conditions": "#Product",
+      "dialog_node": "node_2_1590303472257"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "Welcome",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello I will help you in Learning Trigonometric Otions are Hello I will help you in Learning Trigonometric Otions are \n\n•\tTrigonometry Formulas involving Cofunction Identities (in Degrees)\n•\tTrigonometry Formulas involving Sum/Difference Identities\n•\tTrigonometry Formulas involving Double Angle Identities \n•\tTrigonometry Formulas involving Product identities\nHello I will help you in Learning Trigonometric Otions are Hello I will help you in Learning Trigonometric Otions are \n•\tTrigonometry Formulas involving Cofunction Identities (in Degrees)\n•\tTrigonometry Formulas involving Sum/Difference Identities\n•\tTrigonometry Formulas involving Double Angle Identities \n•\tTrigonometry Formulas involving Product identities\n\nEnter any Option"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "trigno1",
+  "language": "en",
+  "description": ""
+}
